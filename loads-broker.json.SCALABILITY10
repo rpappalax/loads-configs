@@ -1,0 +1,137 @@
+{
+  "name": "Loadtest: Antenna Loadtesting",
+  "plans": [
+
+    {
+      "name": "Loadtest",
+      "description": "***************** WARMUP ***********************",
+      "steps": [
+        {
+          "name": "Antenna",
+          "instance_count": 5,
+          "instance_region": "us-west-2",
+          "instance_type": "m3.medium",
+          "run_max_time": 600,
+          "container_name": "firefoxtesteng/antenna-loadtests:latest",
+          "environment_data": [
+            "URL_SERVER=https://antenna-loadtest-autoscaling.stage.mozaws.net",
+            "VERBOSE=",
+            "TEST_PROCESSES=1",
+            "TEST_DURATION=600",
+            "TEST_CONNECTIONS=1"
+          ],
+          "volume_mapping": "/var/log:/var/log/:rw",
+          "docker_series": "antenna_tests"
+        },
+        {
+          "name": "Antenna",
+          "run_delay": 630,
+          "instance_count": 6,
+          "instance_region": "us-west-2",
+          "instance_type": "m3.medium",
+          "run_max_time": 600,
+          "container_name": "firefoxtesteng/antenna-loadtests:latest",
+          "environment_data": [
+            "URL_SERVER=https://antenna-loadtest-autoscaling.stage.mozaws.net",
+            "VERBOSE=",
+            "TEST_PROCESSES=1",
+            "TEST_DURATION=600",
+            "TEST_CONNECTIONS=1"
+          ],
+          "volume_mapping": "/var/log:/var/log/:rw",
+          "docker_series": "antenna_tests"
+        },
+        {
+          "name": "Antenna",
+          "run_delay": 1260,
+          "instance_count": 7,
+          "instance_region": "us-west-2",
+          "instance_type": "m3.medium",
+          "run_max_time": 600,
+          "container_name": "firefoxtesteng/antenna-loadtests:latest",
+          "environment_data": [
+            "URL_SERVER=https://antenna-loadtest-autoscaling.stage.mozaws.net",
+            "VERBOSE=",
+            "TEST_PROCESSES=1",
+            "TEST_DURATION=600",
+            "TEST_CONNECTIONS=1"
+          ],
+          "volume_mapping": "/var/log:/var/log/:rw",
+          "docker_series": "antenna_tests"
+        },
+        {
+          "name": "Antenna",
+          "run_delay": 1890,
+          "instance_count": 8,
+          "instance_region": "us-west-2",
+          "instance_type": "m3.medium",
+          "run_max_time": 600,
+          "container_name": "firefoxtesteng/antenna-loadtests:latest",
+          "environment_data": [
+            "URL_SERVER=https://antenna-loadtest-autoscaling.stage.mozaws.net",
+            "VERBOSE=",
+            "TEST_PROCESSES=1",
+            "TEST_DURATION=600",
+            "TEST_CONNECTIONS=1"
+          ],
+          "volume_mapping": "/var/log:/var/log/:rw",
+          "docker_series": "antenna_tests"
+        },
+        {
+          "name": "Antenna",
+          "run_delay": 2520,
+          "instance_count": 9,
+          "instance_region": "us-west-2",
+          "instance_type": "m3.medium",
+          "run_max_time": 600,
+          "container_name": "firefoxtesteng/antenna-loadtests:latest",
+          "environment_data": [
+            "URL_SERVER=https://antenna-loadtest-autoscaling.stage.mozaws.net",
+            "VERBOSE=",
+            "TEST_PROCESSES=1",
+            "TEST_DURATION=600",
+            "TEST_CONNECTIONS=1"
+          ],
+          "volume_mapping": "/var/log:/var/log/:rw",
+          "docker_series": "antenna_tests"
+        },
+        {
+          "name": "Antenna",
+          "run_delay": 3150,
+          "instance_count": 10,
+          "instance_region": "us-west-2",
+          "instance_type": "m3.medium",
+          "run_max_time": 600,
+          "container_name": "firefoxtesteng/antenna-loadtests:latest",
+          "environment_data": [
+            "URL_SERVER=https://antenna-loadtest-autoscaling.stage.mozaws.net",
+            "VERBOSE=",
+            "TEST_PROCESSES=1",
+            "TEST_DURATION=600",
+            "TEST_CONNECTIONS=1"
+          ],
+          "volume_mapping": "/var/log:/var/log/:rw",
+          "docker_series": "antenna_tests"
+        },
+        {
+          "name": "Antenna",
+          "run_delay": 3780,
+          "instance_count": 11,
+          "instance_region": "us-west-2",
+          "instance_type": "m3.medium",
+          "run_max_time": 600,
+          "container_name": "firefoxtesteng/antenna-loadtests:latest",
+          "environment_data": [
+            "URL_SERVER=https://antenna-loadtest-autoscaling.stage.mozaws.net",
+            "VERBOSE=",
+            "TEST_PROCESSES=1",
+            "TEST_DURATION=600",
+            "TEST_CONNECTIONS=1"
+          ],
+          "volume_mapping": "/var/log:/var/log/:rw",
+          "docker_series": "antenna_tests"
+        }
+      ]
+    }
+  ]
+}

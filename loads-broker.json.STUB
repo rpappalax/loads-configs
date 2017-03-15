@@ -1,0 +1,65 @@
+{
+  "name": "Stub Attribution Server Testing",
+  "plans": [
+
+    {
+      "name": "Loadtest",
+      "description": "Loadtest",
+      "steps": [
+        {
+          "name": "Loadtest: Warmup",
+          "instance_count": 2,
+          "instance_region": "us-east-1",
+          "instance_type": "c4.2xlarge",
+          "run_max_time": 720,
+          "container_name": "firefoxtesteng/stubattribution-loadtests:latest",
+          "environment_data": [
+            "URL_STUBATTRIBUTION_SERVER=https://stubattribution-default.stage.mozaws.net",
+            "TEST_CONNECTIONS=24",
+            "HMAC_KEY=e02888ac-ade5-47e7-83d2-28ca8c41299d",
+            "TEST_PROCESSES=8",
+            "TEST_DURATION=720"
+          ],
+          "volume_mapping": "/var/log:/var/log/:rw",
+          "docker_series": "stubattribution-loadtests"
+        },
+        {
+          "name": "Loadtest: Test #1",
+          "run_delay": 720,
+          "instance_count": 2,
+          "instance_region": "us-east-1",
+          "instance_type": "c4.2xlarge",
+          "run_max_time": 720,
+          "container_name": "firefoxtesteng/stubattribution-loadtests:latest",
+          "environment_data": [
+            "URL_STUBATTRIBUTION_SERVER=https://stubattribution-default.stage.mozaws.net",
+            "TEST_CONNECTIONS=12",
+            "HMAC_KEY=e02888ac-ade5-47e7-83d2-28ca8c41299d",
+            "TEST_PROCESSES=8",
+            "TEST_DURATION=720"
+          ],
+          "volume_mapping": "/var/log:/var/log/:rw",
+          "docker_series": "stubattribution-loadtests"
+        },
+        {
+          "name": "Loadtest: Test #2",
+          "run_delay": 1440,
+          "instance_count": 2,
+          "instance_region": "us-east-1",
+          "instance_type": "c4.2xlarge",
+          "run_max_time": 720,
+          "container_name": "firefoxtesteng/stubattribution-loadtests:latest",
+          "environment_data": [
+            "URL_STUBATTRIBUTION_SERVER=https://stubattribution-default.stage.mozaws.net",
+            "TEST_CONNECTIONS=24",
+            "HMAC_KEY=e02888ac-ade5-47e7-83d2-28ca8c41299d",
+            "TEST_PROCESSES=8",
+            "TEST_DURATION=720"
+          ],
+          "volume_mapping": "/var/log:/var/log/:rw",
+          "docker_series": "stubattribution-loadtests"
+        }
+      ]
+    }
+  ]
+}
